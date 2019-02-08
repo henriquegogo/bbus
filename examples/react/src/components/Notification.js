@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { subscribe, unsubscribe } from '../../../Shout'
+import { subscribe, unsubscribe } from 'shout'
 
 export default class Notification extends Component {
 

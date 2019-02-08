@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Notification from './Notification'
-import { subscribe } from '../../../Shout'
+import { subscribe } from 'shout'
 
 export default class Sidebar extends Component {
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { dispatch } from '../../../Shout'
+import { dispatch } from 'shout'
 
 export default class Main extends Component {
 
