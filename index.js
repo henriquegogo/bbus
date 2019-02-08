@@ -1,11 +1,11 @@
-class Shout {
+class Main {
   
   constructor() {
-    if (Shout.instance) {
-      return Shout.instance;
+    if (Main.instance) {
+      return Main.instance;
     }
     this.subscriptions = {};
-    Shout.instance = this;
+    Main.instance = this;
   }
 
   subscribe(action, func) {
@@ -35,13 +35,13 @@ class Shout {
 }
 
 export function subscribe(action, func) {
-  new Shout().subscribe(action, func);
+  new Main().subscribe(action, func);
 }
 
 export function unsubscribe(action, func) {
-  new Shout().unsubscribe(action, func);
+  new Main().unsubscribe(action, func);
 }
 
 export function dispatch() {
-  new Shout().dispatch(...arguments);
+  new Main().dispatch(...arguments);
 }

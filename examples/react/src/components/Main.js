@@ -10,7 +10,7 @@ export default class Main extends Component {
   render() {
     return (
       <main>
-        <input type='text' ref={r => { this.message = r }} onChange={this.notify} />
+        <input type='text' placeholder='Type something' ref={r => { this.message = r }} onChange={this.notify} />
         <button onClick={this.notify}>Notify</button>
       </main>
     );

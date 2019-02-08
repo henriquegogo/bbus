@@ -5,11 +5,11 @@ import { subscribe } from 'shout'
 export default class Sidebar extends Component {
 
   state = {
+    hide: false,
     hasNotification: false
   }
 
   verifyNotification = (message) => {
-    setTimeout(() => { this.setState({ hide: true }) }, 2000);
     this.setState({ hasNotification: message ? true : false });
   }
 
@@ -21,6 +21,7 @@ export default class Sidebar extends Component {
     return (
       <aside>
         {this.state.hide ? null : <Notification />}
+        <button onClick={() => this.setState({hide: !this.state.hide})}>Toggle notification area</button>
         <b>{this.state.hasNotification ? 'Has notification' : 'No notification'}</b>
       </aside>
     );

@@ -2,7 +2,7 @@
   "name": "shout",
   "version": "1.0.0",
   "description": "Shout messages to who cares",
-  "main": "Shout.js",
+  "main": "index.js",
   "author": "Henrique Gogó",
   "license": "MIT"
 }
