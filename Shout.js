@@ -1,13 +1,10 @@
 class Shout {
-
-  static instance;
-
-  subscriptions = {};
   
   constructor() {
     if (Shout.instance) {
       return Shout.instance;
     }
+    this.subscriptions = {};
     Shout.instance = this;
   }
 
