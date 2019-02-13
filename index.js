@@ -28,7 +28,9 @@ class Main {
     for (let i in this.subscriptions[action]) {
       let func = this.subscriptions[action][i];
       if (typeof func === 'function') {
-        func(...arguments);
+        try {
+          func(...arguments);
+        } catch (err) { }
       }
     }
   }
