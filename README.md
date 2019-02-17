@@ -1,26 +1,26 @@
-# Shout
-Shout messages to who cares
+# Bbus
+Event Message Bus
 
 ## How to use
 
 ```javascript
 // main.js
-import { subscribe } from './Shout'
+import { on } from './Bbus'
 
-subscribe('SAY_SOMETHING', (message) => { console.log(message) })
+on('SAY_SOMETHING', (message) => { console.log(message) })
 ```
 
 ```javascript
 // calls.js
-import { dispatch } from './Shout'
+import { emit } from './Bbus'
 
-dispatch('SAY_SOMETHING', 'Hello, world!')
+emit('SAY_SOMETHING', 'Hello, world!')
 ```
 
 ## Unsubscribe
 ```javascript
 // main.js
-import { unsubscribe } from './Shout'
+import { off } from './Bbus'
 
-unsubscribe('SAY_SOMETHING', *reference_for_function*)
+off('SAY_SOMETHING', *reference_for_function*)
 ```

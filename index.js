@@ -1,21 +1,21 @@
-class Main {
+export default class Bbus {
   
   constructor() {
-    if (Main.instance) {
-      return Main.instance;
+    if (Bbus.instance) {
+      return Bbus.instance;
     }
     this.subscriptions = {};
-    Main.instance = this;
+    Bbus.instance = this;
   }
 
-  subscribe(action, func) {
+  on(action, func) {
     if (!Array.isArray(this.subscriptions[action])) {
       this.subscriptions[action] = [];
     }
     this.subscriptions[action].push(func);
   }
 
-  unsubscribe(action, func) {
+  off(action, func) {
     if (Array.isArray(this.subscriptions[action])) {
       this.subscriptions[action] = this.subscriptions[action].filter(item => {
         return item !== func;
@@ -23,7 +23,7 @@ class Main {
     }
   }
 
-  dispatch(action) {
+  emit(action) {
     Array.prototype.shift.apply(arguments);
     for (let i in this.subscriptions[action]) {
       let func = this.subscriptions[action][i];
@@ -36,14 +36,14 @@ class Main {
   }
 }
 
-export function subscribe(action, func) {
-  new Main().subscribe(action, func);
+export function on(action, func) {
+  new Bbus().on(action, func);
 }
 
-export function unsubscribe(action, func) {
-  new Main().unsubscribe(action, func);
+export function off(action, func) {
+  new Bbus().off(action, func);
 }
 
-export function dispatch() {
-  new Main().dispatch(...arguments);
+export function emit() {
+  new Bbus().emit(...arguments);
 }
