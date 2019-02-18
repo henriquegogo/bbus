@@ -1,8 +1,8 @@
 {
-  "name": "shout",
+  "name": "bbus",
   "version": "1.0.0",
-  "description": "Shout messages to who cares",
-  "main": "index.js",
+  "description": "Event Message Bus",
+  "main": "bbus.js",
   "author": "Henrique Gogó",
   "license": "MIT"
 }

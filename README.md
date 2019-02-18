@@ -5,22 +5,31 @@ Event Message Bus
 
 ```javascript
 // main.js
-import { on } from './Bbus'
+import { default as bbus } from 'bbus'
 
-on('SAY_SOMETHING', (message) => { console.log(message) })
+bbus.on('SAY_SOMETHING', (message) => { console.log(message) })
 ```
 
 ```javascript
 // calls.js
-import { emit } from './Bbus'
+import { default as bbus } from 'bbus'
 
-emit('SAY_SOMETHING', 'Hello, world!')
+bbus.emit('SAY_SOMETHING', 'Hello, world!')
 ```
 
 ## Unsubscribe
 ```javascript
 // main.js
-import { off } from './Bbus'
+import { default as bbus } from 'bbus'
 
-off('SAY_SOMETHING', *reference_for_function*)
+bbus.off('SAY_SOMETHING', *reference_for_function*)
+```
+
+## ES5
+You can use require() syntax too:
+```javascript
+// main.js
+const bbus = require('./bbus.js');
+
+bbus.on('SAY_SOMETHING', (message) => { console.log(message) })
 ```
